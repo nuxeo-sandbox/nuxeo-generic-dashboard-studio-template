@@ -1,0 +1,97 @@
+<link rel="import" href="analytics/dashboards/generic-search-analytics.html">
+<link rel="import" href="analytics/dashboards/generic-workflow-analytics.html">
+<link rel="import" href="analytics/dashboards/generic-asset-analytics.html">
+<link rel="import" href="analytics/dashboards/generic-user-analytics.html">
+<link rel="import" href="analytics/dashboards/generic-download-analytics.html">
+<link rel="import" href="analytics/dashboards/generic-upload-analytics.html">
+
+<!-- Disable default dashboards -->
+<nuxeo-slot-content name="analyticsDocumentDistributionItem" slot="ANALYTICS_ITEMS" order="10" disabled></nuxeo-slot-content>
+<nuxeo-slot-content name="analyticsDocumentDistributionPage" slot="ANALYTICS_PAGES" order="10" disabled></nuxeo-slot-content>
+<nuxeo-slot-content name="analyticsRepositoryItem" slot="ANALYTICS_ITEMS" order="20" disabled></nuxeo-slot-content>
+<nuxeo-slot-content name="analyticsRepositoryPage" slot="ANALYTICS_PAGES" order="20" disabled></nuxeo-slot-content>
+<nuxeo-slot-content name="analyticsSearchItem" slot="ANALYTICS_ITEMS" order="40" disabled></nuxeo-slot-content>
+<nuxeo-slot-content name="analyticsSearchPage" slot="ANALYTICS_PAGES" order="30" disabled></nuxeo-slot-content>
+<nuxeo-slot-content name="analyticsWorkflowItem" slot="ANALYTICS_ITEMS" order="40" disabled></nuxeo-slot-content>
+<nuxeo-slot-content name="analyticsWorkflowPage" slot="ANALYTICS_PAGES" order="40" disabled></nuxeo-slot-content>
+
+
+<nuxeo-slot-content name="genericAssetAnalyticsItem" slot="ANALYTICS_ITEMS" order="1">
+  <template>
+    <nuxeo-page-item name="document-distribution" label="analytics.asset"></nuxeo-page-item>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericAssetAnalyticsPage" slot="ANALYTICS_PAGES" order="1">
+  <template>
+    <generic-asset-analytics name="document-distribution"></generic-asset-analytics>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericUploadAnalyticsItem" slot="ANALYTICS_ITEMS" order="10">
+  <template>
+    <nuxeo-page-item name="upload" label="analytics.upload"></nuxeo-page-item>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericUploadAnalyticsPage" slot="ANALYTICS_PAGES" order="10">
+  <template>
+    <generic-upload-analytics name="upload"></generic-upload-analytics>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericDownloadAnalyticsItem" slot="ANALYTICS_ITEMS" order="11">
+  <template>
+    <nuxeo-page-item name="download" label="analytics.download"></nuxeo-page-item>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericDownloadAnalyticsPage" slot="ANALYTICS_PAGES" order="10">
+  <template>
+    <generic-download-analytics name="download"></generic-download-analytics>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericUserAnalyticsItem" slot="ANALYTICS_ITEMS" order="11">
+  <template>
+    <nuxeo-page-item name="user" label="analytics.user"></nuxeo-page-item>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericUserAnalyticsPage" slot="ANALYTICS_PAGES" order="12">
+  <template>
+    <generic-user-analytics name="user"></generic-user-analytics>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericWorkflowAnalyticsItem" slot="ANALYTICS_ITEMS" order="20">
+  <template>
+    <nuxeo-page-item name="process" label="analytics.workflow"></nuxeo-page-item>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericWorkflowAnalyticsPage" slot="ANALYTICS_PAGES" order="20" priority="100">
+  <template>
+    <generic-workflow-analytics name="process"></generic-workflow-analytics>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericAnalyticsSearchPageItem" slot="ANALYTICS_ITEMS" order="30">
+  <template>
+    <nuxeo-filter group="administrators" user="[[user]]">
+      <template>
+        <nuxeo-page-item name="search" label="analytics.search"></nuxeo-page-item>
+      </template>
+    </nuxeo-filter>
+  </template>
+</nuxeo-slot-content>
+
+<nuxeo-slot-content name="genericAnalyticsSearchPage" slot="ANALYTICS_PAGES" order="30" priority="100">
+  <template>
+    <nuxeo-filter group="administrators" user="[[user]]">
+      <template>
+        <generic-search-analytics name="search"></generic-search-analytics>
+      </template>
+    </nuxeo-filter>
+  </template>
+</nuxeo-slot-content>
